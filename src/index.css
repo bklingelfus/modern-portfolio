@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&family=Poiret+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Shadows+Into+Light&family=Xanh+Mono:ital@0;1&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+@layer base {
+    * {
+        font-family: 'Cormorant Garamond', serif;
+    }
+    .writing-sideways {
+        writing-mode: vertical-lr;
+        text-align: center;
+    }
+    .borderLeft::after {
+        display:block;
+        content: '';
+        transform: scaleX(0);  
+        transform-origin:0% 50%;
+        transition: transform 700ms ease-in-out;
+    }
+    .borderLeft:hover:after { transform: scaleX(1);}
+    @media (max-width:868px) {
+        .menu-options::after {padding-left: 8px;}
+    }
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .scrollbar-hidden::-webkit-scrollbar {
+        display: none;
+    }
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .scrollbar-hidden {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    .scroll-shadow {
+        -webkit-overflow-scrolling: touch;
+        overflow-scrolling: touch;
+        background:
+        /* Shadow Cover TOP */
+        linear-gradient(
+        transparent 30%,
+        rgba(255, 255, 255, 0)
+        ) center top,
+        
+        /* Shadow Cover BOTTOM */
+        linear-gradient(
+        rgba(255, 255, 255, 0), 
+        transparent 70%
+        ) center bottom,
+                
+        /* Shadow BOTTOM */
+        radial-gradient(
+        farthest-side at 50% 100%,
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0)
+        ) center bottom;
+
+        background-repeat: no-repeat;
+        background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+        background-attachment: local, local, scroll, scroll;
+    }
+    
+}
+
+@layer components {
+    .menu-bar {
+        @apply h-[2px] my-1 bg-stone-800 transition-all ease-linear
+        group-hover:w-5/6
+        dark:bg-stone-400 md:group-hover:w-10/12;
+    }
+    .menu-options {
+        @apply inline-block border-b w-full text-8xl pt-12 pl-16 text-left transition-all duration-300 ease-in-out
+        border-b-stone-400 dark:border-b-stone-600
+        hover:bg-stone-300 dark:hover:bg-black
+        after:pl-16 after:pb-2 after:border-b-2
+        md:pt-8 md:pl-4 md:text-6xl;
+    }
+    .project-img1 {
+        @apply w-[65%] h-[600px] object-cover cursor-pointer transition-all duration-500 ease-in-out
+        hover:scale-110 shadow-lg
+        md:w-full md:h-[70%]
+        ;
+    }
+    .project-img2 {
+        @apply w-[15%] h-[600px] object-cover cursor-pointer transition-all duration-500 ease-in-out
+        hover:scale-110 shadow-lg
+        md:w-full md:h-[10%]
+        ;
+    }
+    .project-img3 {
+        @apply w-[15%] h-[600px] object-cover cursor-pointer transition-all duration-500 ease-in-out
+        hover:scale-110 shadow-lg
+        md:w-full md:h-[10%]
+        ;
+    }
+    .project-tag {
+        @apply inline-block mx-6 my-2 text-xl whitespace-nowrap transition-all duration-300
+        border-b-stone-800 dark:border-b-stone-400 
+        after:border-b-2 after:border-b-stone-800 dark:after:border-b-stone-400 after:duration-300
+        ;
+    }
+    .project-container {
+        @apply h-full w-full overflow-y-auto flex flex-col justify-between transition-all duration-500 ease-in-out
+        ;
+    }
+    .project-name {
+        @apply w-full pl-16 py-8 text-4xl mb-4
+        md:pl-8 md:py-4
+        ;
+    }
+    .project-description {
+        @apply w-full px-16 py-16 text-center
+        md:px-8 md:py-10
+        ;
+    }
+    .project-images {
+        @apply w-full px-16 flex justify-between
+        md:flex-col md:px-0 md:h-[90%]
+        ;
+    }
+    .project-tools {
+        @apply text-2xl mt-6
+        ;
+    }
+    .skills-box {
+        @apply flex flex-wrap items-center justify-around;
+    }
+    .tool-logo {
+        @apply h-auto w-auto max-w-[80px] max-h-[60px] m-4 md:max-w-[60px] md:max-h-[50px] hover:scale-110 transition-all duration-300
+        ;
+    }
+    .tool-popup {
+        @apply absolute text-lg left-0 top-[-14px] px-4 rounded-sm opacity-0 text-stone-200 bg-stone-800 bg-opacity-60 transition-all duration-300 ease-in-out
+        dark:text-stone-800 dark:bg-stone-200 dark:bg-opacity-60
+        group-hover:opacity-100
+        ;
+    }
+    .project-link {
+        @apply text-xl border-b border-b-stone-800
+        dark:border-b-stone-400
+        hover:text-stone-400 dark:hover:text-stone-200 hover:border-b-stone-400 dark:hover:border-b-stone-200
+        ;
+    }
+
+}
