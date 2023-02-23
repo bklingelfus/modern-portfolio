@@ -52,16 +52,16 @@ export const ContactUs = (props) => {
         </h1>
         <form ref={form} onSubmit={sendEmail} className='h-full w-full flex flex-col items-center justify-center'>
             <div className='flex flex-col w-[60%] max-w-[600px] md:w-[80%] my-4'>
-                <label className='text-2xl md:text-xl my-2'>Name</label>
-                <input type="text" name="name" className='text-xl bg-stone-100 dark:bg-stone-300 rounded-sm shadow px-1'/>
+                <label className='text-2xl md:text-xl my-2 md:hidden'>Name</label>
+                <input type="text" name="name" className='text-xl bg-stone-100 dark:bg-stone-300 rounded-sm shadow px-1' placeholder='Name'/>
             </div>
             <div className='flex flex-col w-[60%] max-w-[600px] md:w-[80%] my-4'>
-                <label className='text-2xl md:text-xl my-2'>Email</label>
-                <input type="email" name="email"  className='text-xl bg-stone-100 dark:bg-stone-300 rounded-sm shadow px-1'/>
+                <label className='text-2xl md:text-xl my-2 md:hidden'>Email</label>
+                <input type="email" name="email"  className='text-xl bg-stone-100 dark:bg-stone-300 rounded-sm shadow px-1' placeholder='Email'/>
             </div>
             <div className='flex flex-col w-[60%] max-w-[600px] md:w-[80%] my-4'>
-                <label className='text-2xl md:text-xl my-2'>Message</label>
-                <textarea name="message"  className='text-lg bg-stone-100 dark:bg-stone-300 rounded-sm shadow px-1 min-h-[120px]'/>
+                <label className='text-2xl md:text-xl my-2 md:hidden'>Message</label>
+                <textarea name="message"  className='text-lg bg-stone-100 dark:bg-stone-300 rounded-sm shadow px-1 min-h-[120px]' placeholder='Message'/>
             </div>
             <input type="submit" value="Send" className='bg-stone-600 text-stone-300 px-8 md:px-6 py-1 text-2xl md:text-xl my-4 md:my-2 rounded-sm
             hover:bg-stone-400 hover:text-stone-800'/>

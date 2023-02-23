@@ -61,7 +61,27 @@
         background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
         background-attachment: local, local, scroll, scroll;
     }
+    .pulse {
+        box-shadow: 0 0 0 0 #78716c;
+        transform: scale(1);
+        animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+        0% {
+            transform: scale(0.95);
+            box-shadow: 0 0 0 0 #78716ccc;
+        }
     
+        70% {
+            transform: scale(1);
+            box-shadow: 0 0 0 8px #a8a29e05;
+        }
+    
+        100% {
+            transform: scale(0.95);
+            box-shadow: 0 0 0 0 #a8a29e00;
+        }
+    }
 }
 
 @layer components {
@@ -78,21 +98,21 @@
         md:pt-8 md:pl-4 md:text-6xl;
     }
     .project-img1 {
-        @apply w-[65%] h-[600px] object-cover cursor-pointer transition-all duration-500 ease-in-out
-        hover:scale-110 shadow-lg
-        md:w-full md:h-[70%]
+        @apply w-auto max-w-[70%] h-[500px] object-cover cursor-pointer transition-all duration-500 ease-in-out
+        hover:scale-110 md:hover:scale-100 shadow-lg
+        md:w-full md:max-w-full md:h-[65%]
         ;
     }
     .project-img2 {
-        @apply w-[15%] h-[600px] object-cover cursor-pointer transition-all duration-500 ease-in-out
-        hover:scale-110 shadow-lg
-        md:w-full md:h-[10%]
+        @apply w-auto max-w-[15%] h-[500px] object-cover cursor-pointer transition-all duration-500 ease-in-out
+        hover:scale-110 shadow-lg md:hover:scale-100
+        md:w-full md:max-w-full md:h-[10%] 
         ;
     }
     .project-img3 {
-        @apply w-[15%] h-[600px] object-cover cursor-pointer transition-all duration-500 ease-in-out
-        hover:scale-110 shadow-lg
-        md:w-full md:h-[10%]
+        @apply w-auto max-w-[15%] h-[500px] object-cover cursor-pointer transition-all duration-500 ease-in-out
+        hover:scale-110 shadow-lg md:hover:scale-100
+        md:w-full md:max-w-full md:h-[10%]
         ;
     }
     .project-tag {
@@ -106,7 +126,7 @@
         ;
     }
     .project-name {
-        @apply w-full pl-16 py-8 text-4xl mb-4
+        @apply w-full pl-16 py-8 text-4xl mb-4 underline underline-offset-4
         md:pl-8 md:py-4
         ;
     }
@@ -117,7 +137,7 @@
     }
     .project-images {
         @apply w-full px-16 flex justify-between
-        md:flex-col md:px-0 md:h-[90%]
+        md:flex-col md:px-0 md:h-[60%]
         ;
     }
     .project-tools {

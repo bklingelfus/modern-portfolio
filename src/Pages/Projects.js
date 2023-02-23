@@ -20,7 +20,7 @@ const Projects =(props)=> {
     const scrollRef = useHorizontalScroll();
 
     // States
-    const [currentImg, setCurrentImg] = useState(0);
+    const [currentImg, setCurrentImg] = useState(1);
     const [currentProj, setCurrentProj] = useState(0);
 
     // On Loads
@@ -92,10 +92,10 @@ const Projects =(props)=> {
                 </div>
             </div>   
             <div className={"project-container scrollbar-hidden scroll-shadow" +((currentProj===1)?' ':' opacity-0 pointer-events-none w-0')}>
-                <h3 className="project-name">Iris (Online Marketplace)</h3>
+                <h3 className="project-name">Iris (Marketplace)</h3>
                 <div className="project-images">
-                    <img onClick={()=>{setCurrentImg(0)}} src={store1} alt="project image" className={((currentImg===0)?'project-img1':((currentImg===1)?'project-img2':'project-img3'))+' '}></img>
-                    <img onClick={()=>{setCurrentImg(1)}} src={store2} alt="project image" className={((currentImg===1)?'project-img1':((currentImg===2)?'project-img2':'project-img3'))+' '}></img>
+                    <img onClick={()=>{setCurrentImg(0)}} src={store2} alt="project image" className={((currentImg===0)?'project-img1':((currentImg===1)?'project-img2':'project-img3'))+' '}></img>
+                    <img onClick={()=>{setCurrentImg(1)}} src={store1} alt="project image" className={((currentImg===1)?'project-img1':((currentImg===2)?'project-img2':'project-img3'))+' '}></img>
                     <img onClick={()=>{setCurrentImg(2)}} src={store3} alt="project image" className={((currentImg===2)?'project-img1':((currentImg===0)?'project-img2':'project-img3'))+' '}></img>
                 </div>
                 <div className="project-description">
@@ -176,8 +176,8 @@ const Projects =(props)=> {
             <div className={"project-container scrollbar-hidden scroll-shadow" +((currentProj===3)?' ':' opacity-0 pointer-events-none w-0')}>
                 <h3 className="project-name">Social Media App</h3>
                 <div className="project-images">
-                    <img onClick={()=>{setCurrentImg(0)}} src={social1} alt="project image" className={((currentImg===0)?'project-img1':((currentImg===1)?'project-img2':'project-img3'))+' '}></img>
-                    <img onClick={()=>{setCurrentImg(1)}} src={social2} alt="project image" className={((currentImg===1)?'project-img1':((currentImg===2)?'project-img2':'project-img3'))+' '}></img>
+                    <img onClick={()=>{setCurrentImg(0)}} src={social2} alt="project image" className={((currentImg===0)?'project-img1':((currentImg===1)?'project-img2':'project-img3'))+' '}></img>
+                    <img onClick={()=>{setCurrentImg(1)}} src={social1} alt="project image" className={((currentImg===1)?'project-img1':((currentImg===2)?'project-img2':'project-img3'))+' '}></img>
                     <img onClick={()=>{setCurrentImg(2)}} src={social3} alt="project image" className={((currentImg===2)?'project-img1':((currentImg===0)?'project-img2':'project-img3'))+' '}></img>
                 </div>
                 <div className="project-description">

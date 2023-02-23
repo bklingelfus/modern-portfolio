@@ -51,10 +51,9 @@ const Navbar =(props)=> {
         </div>
         <div className="h-3/10 p-2 flex flex-col justify-end items-center
                         md:w-1/3 md:h-auto">
-            <i onClick={props.handleMode} className="fa-solid fa-circle-half-stroke mb-10 text-2xl cursor-pointer 
-                transition-all duration-1000
-                rotate-[-90deg] dark:rotate-[270deg] 
-                md:mb-0 md:ml-auto md:mr-2"></i>
+            <div className={(props.DMHighlight?'pulse':'')+' rounded-full h-8 px-1'}>
+                <i onClick={props.handleMode} className={'fa-solid fa-circle-half-stroke mb-10 text-2xl cursor-pointer transition-all duration-1000 rotate-[-90deg] dark:rotate-[270deg] md:mb-0 md:ml-auto md:mr-2'}></i>
+            </div>
             <a href="https://www.linkedin.com/in/bernardo-klingelfus/" target="_blank" rel="noopener noreferrer" className="m-2 text-lg hover:text-xl md:hidden">
                 <i className="fa-brands fa-linkedin-in"></i>
                 {/* <i className="fa-brands fa-linkedin"></i> */}
